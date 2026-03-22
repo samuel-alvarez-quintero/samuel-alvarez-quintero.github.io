@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Samuel Álvarez - Full-Stack Developer</title>
+
+        <link rel="stylesheet" href="cv.css">
+    </head>
+
+    <body>
+
+        <div class="header">
+            <div class="header-content">
+                <div>
+                    <h1>Samuel Alejandro Álvarez Quintero</h1>
+                    <div class="subtitle">Full-Stack Developer | Backend &
+                        Infrastructure</div>
+                    <div class="contact">
+                        Montevideo, Uruguay | <a href="tel:+59899635706">+598 99
+                            635 706</a><br>
+                        Email: <a
+                            href="mailto:samuel@norma.com.uy">samuel@norma.com.uy</a><br>
+                        <a
+                            href="mailto:samale456uruguay@gmail.com">samale456uruguay@gmail.com</a><br><br>
+                        <a
+                            href="https://www.linkedin.com/in/samuel-dev">linkedin.com/in/samuel-dev</a><br>
+                        <a
+                            href="https://github.com/samuel-alvarez-quintero">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- <div class="profile-pic">
+                    <img src="img/profile.jpg" alt="Samuel Álvarez">
+                </div> -->
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Perfil Profesional</h2>
+            <p>
+                Desarrollador Full-Stack con más de 6 años de experiencia en
+                desarrollo web utilizando
+                frameworks PHP modernos como <strong>Symfony y Laravel</strong>.
+                Especializado en la
+                construcción de aplicaciones backend robustas, APIs REST y
+                modelado relacional en MySQL.
+            </p>
+            <p>
+                Experiencia en configuración de entornos de desarrollo y
+                producción sobre VPS y cloud,
+                incluyendo provisión de servidores Linux, configuración de
+                seguridad, despliegues manuales
+                y mantenimiento de aplicaciones en producción. Enfoque en código
+                mantenible, estabilidad
+                operativa y seguridad.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Experiencia Profesional</h2>
+
+            <h3>Desarrollador Backend / Fullstack</h3>
+            <div class="small bold">Cygnus - Montevideo | 2019 - Presente</div>
+
+            <ul>
+                <li>Desarrollo y mantenimiento de aplicaciones web utilizando
+                    <strong>Symfony y Laravel</strong>.</li>
+                <li>Diseño e implementación de APIs REST para consumo interno y
+                    externo.</li>
+                <li>Modelado y optimización de bases de datos relacionales en
+                    MySQL.</li>
+                <li>Implementación de migraciones, seeders y factories.</li>
+                <li>Gestión de tareas en segundo plano mediante Jobs y
+                    Queues.</li>
+                <li>Configuración y mantenimiento de entornos productivos en
+                    servidores Linux (LAMP).</li>
+                <li>Despliegues manuales mediante SSH con control de versiones
+                    (Git).</li>
+                <li>Implementación de medidas de seguridad: firewall, control de
+                    accesos, SSL y hardening básico.</li>
+                <li>Diagnóstico y resolución de problemas en producción mediante
+                    análisis de logs.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Proyectos Técnicos Relevantes</h2>
+
+            <h3>Plataforma de Rentadora de Autos (Reservas y Pagos Online)</h3>
+
+            <ul>
+                <li>Desarrollo de sistema de reservas y pagos online utilizando
+                    Symfony, PHP y MySQL.</li>
+                <li>Provisionamiento y configuración de servidor Rocky Linux
+                    desde cero.</li>
+                <li>Implementación de arquitectura segura con:
+                    <ul>
+                        <li>Todos los puertos cerrados por defecto</li>
+                        <li>Acceso público restringido mediante proxy reverso
+                            (Cloudflare)</li>
+                        <li>Acceso SSH limitado mediante DNS dinámico y scripts
+                            automatizados</li>
+                    </ul>
+                </li>
+                <li>Configuración de firewall y políticas SELinux para
+                    aislamiento del sistema.</li>
+                <li>Automatización de tareas mediante Bash scripts y cron
+                    jobs.</li>
+                <li>Gestión de base de datos MySQL con backups y
+                    mantenimiento.</li>
+            </ul>
+
+            <h3>Arquitectura SaaS Multi-Tenant</h3>
+
+            <ul>
+                <li>Base de datos compartida con segmentación por
+                    organization_id.</li>
+                <li>Middleware para resolución automática del tenant.</li>
+                <li>Global Scopes para aislamiento forzado de datos.</li>
+                <li>Roles por organización mediante tabla pivote.</li>
+                <li>Policies para autorización contextual.</li>
+                <li>Pruebas automatizadas validando aislamiento entre
+                    tenants.</li>
+                <li>Dockerización del entorno de desarrollo.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Stack Técnico</h2>
+
+            <p><strong>Backend:</strong> PHP 8+, Symfony, Laravel, Eloquent ORM,
+                Doctrine ORM, APIs REST, Queues, Events, Policies</p>
+
+            <p><strong>Base de Datos:</strong> MySQL, diseño relacional,
+                optimización de consultas, migraciones y seeders</p>
+
+            <p><strong>Infraestructura & Deployment:</strong> Linux, LAMP,
+                Apache, Nginx, configuración de servidores, SSH, firewall
+                (UFW/iptables),
+                SSL (Let's Encrypt), Cloudflare, Bash scripting, cron jobs</p>
+
+            <p><strong>DevOps:</strong> Git, GitHub, Docker (principalmente en
+                desarrollo),
+                GitHub Actions (nivel inicial)</p>
+
+            <p><strong>Testing:</strong> PHPUnit, pruebas de aislamiento
+                multi-tenant</p>
+        </div>
+
+        <div class="section">
+            <h2>Educación</h2>
+            <p>
+                Ingeniería en Informática<br>
+                Universidad Politécnica Territorial de Yaracuy “Arístides
+                Bastidas”<br>
+                San Felipe - Venezuela
+            </p>
+        </div>
+    </body>
+</html>

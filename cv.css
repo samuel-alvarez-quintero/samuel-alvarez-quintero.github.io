@@ -1,0 +1,161 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #2d2d2d;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+body>* {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px 40px;
+}
+
+/* Header */
+.header {
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-pic img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #e5e7eb;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #4b5563;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.contact {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.contact a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Secciones */
+.section {
+    margin-bottom: 25px;
+}
+
+.section h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2563eb;
+    margin-bottom: 10px;
+    border-left: 4px solid #2563eb;
+    padding-left: 10px;
+}
+
+/* Títulos internos */
+.section h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 3px;
+}
+
+/* Texto auxiliar */
+.small {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+/* Listas */
+ul {
+    padding-left: 18px;
+    margin-top: 8px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Párrafos */
+p {
+    margin-bottom: 10px;
+}
+
+/* Stack técnico */
+.section p strong {
+    color: #111827;
+}
+
+/* Sublistas (como seguridad en proyecto) */
+ul ul {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+ul ul li {
+    font-size: 14px;
+    color: #374151;
+}
+
+/* Separación visual ligera */
+.section:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+/* Hover sutil para links */
+a {
+    transition: all 0.2s ease;
+}
+
+/* Versión impresión (muy importante) */
+@media print {
+    body {
+        background: white;
+    }
+
+    body>* {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+}
