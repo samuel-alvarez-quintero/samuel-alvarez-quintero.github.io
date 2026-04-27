@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV – Samuel Alvarez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #2a2a2a;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #1a1a1a;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 32px auto;
+      display: grid;
+      grid-template-columns: 1fr 52mm;
+      background: #fff;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.4);
+      overflow: hidden;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      /* background: #1C1109; */
+      color: #F7F4EE;
+      display: flex;
+      flex-direction: column;
+      order: 2;
+    }
+
+    .photo-wrap {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .sidebar-content {
+      padding: 24px 20px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;  
+    }
+
+    .s-section-title {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #B87333;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .contact-list li {
+      font-size: 11px;
+      color: #000;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .contact-list li strong {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #B87333;
+      font-weight: 500;
+      margin-bottom: 1px;
+    }
+
+    .skills-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .skill-bar-label {
+      font-size: 11px;
+      color: #000;
+      margin-bottom: 3px;
+    }
+
+    .skill-dot-row {
+      display: flex;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    .dot.filled { background: #B87333; }
+    .dot.empty { background: #3a3028; }
+
+    .sidebar-divider {
+      border: none;
+      border-top: 1px solid #3a3028;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      display: flex;
+      flex-direction: column;
+      order: 1;
+    }
+
+    .name-block {
+      padding: 32px 28px 22px;
+      /* border-bottom: 3px solid #1C1109; */
+    }
+
+    .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.9rem;
+      font-weight: 600;
+      line-height: 1;
+      color: #1C1109;
+      letter-spacing: -0.5px;
+    }
+
+    .role-tag {
+      display: inline-block;
+      margin-top: 10px;
+      /* background: #B87333; */
+      color: #000;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+    }
+
+    .main-content {
+      padding: 20px 28px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .m-section-title {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #B87333;
+      font-weight: 500;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #D9CCBA;
+      margin-bottom: 12px;
+    }
+
+    .perfil-text {
+      font-size: 12.5px;
+      color: #4a3f35;
+      line-height: 1.7;
+    }
+
+    /* JOBS */
+    .job { margin-bottom: 14px; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2px;
+      gap: 8px;
+    }
+
+    .job-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1C1109;
+      line-height: 1.2;
+    }
+
+    .job-badge {
+      background: #1C1109;
+      color: #F7F4EE;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .job-badge.secondary {
+      background: transparent;
+      color: #B87333;
+      border: 1px solid #D9CCBA;
+    }
+
+    .job-place {
+      font-size: 11px;
+      color: #8a7060;
+      margin-bottom: 8px;
+    }
+
+    .job ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .job ul li {
+      font-size: 12px;
+      color: #3a3028;
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .job ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 5px;
+      height: 1px;
+      background: #B87333;
+    }
+
+    .job-minor {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 12px;
+      background: #F7F4EE;
+      border-left: 3px solid #D9CCBA;
+      margin-bottom: 10px;
+    }
+
+    .job-minor-title {
+      font-size: 12px;
+      color: #4a3f35;
+      font-weight: 500;
+    }
+
+    .job-minor-period {
+      font-size: 10px;
+      color: #8a7060;
+    }
+
+    .edu-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .edu-degree {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1C1109;
+    }
+
+    .edu-place {
+      font-size: 11px;
+      color: #8a7060;
+    }
+
+    /* PRINT / A4 */
+    @media print {
+      body { background: white; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        width: 210mm;
+        min-height: 297mm;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="photo-wrap">
+      <img src="img/profile.jpg" alt="Samuel Alvarez">
+    </div>
+    <div class="sidebar-content">
+
+      <div>
+        <div class="s-section-title">Contacto</div>
+        <ul class="contact-list">
+          <li><strong>Teléfono</strong>+598 99 635 706</li>
+          <li><strong>Email</strong>samale456uruguay@gmail.com</li>
+          <li><strong>Residencia</strong>Montevideo, Uruguay</li>
+          <li><strong>LinkedIn</strong>linkedin.com/in/samuel-dev</li>
+        </ul>
+      </div>
+
+      <hr class="sidebar-divider">
+
+      <div>
+        <div class="s-section-title">Competencias</div>
+        <div class="skills-sidebar">
+          <div>
+            <div class="skill-bar-label">Atención al cliente</div>
+            <div class="skill-dot-row">
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div>
+            </div>
+          </div>
+          <div>
+            <div class="skill-bar-label">Trabajo en equipo</div>
+            <div class="skill-dot-row">
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+            </div>
+          </div>
+          <div>
+            <div class="skill-bar-label">Adaptabilidad</div>
+            <div class="skill-dot-row">
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+            </div>
+          </div>
+          <div>
+            <div class="skill-bar-label">Condición física</div>
+            <div class="skill-dot-row">
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div>
+            </div>
+          </div>
+          <div>
+            <div class="skill-bar-label">Inglés</div>
+            <div class="skill-dot-row">
+              <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div><div class="dot empty"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="sidebar-divider">
+
+      <div>
+        <div class="s-section-title">Referencia</div>
+        <div style="font-size: 11px; color: #000; line-height: 1.7;">
+          <strong style="display:block; color: #000; font-weight:500; font-size:12px; margin-bottom:3px;">Felix Caffè</strong>
+          Punta del Este<br>
+          +598 99 312 525<br>
+          felixcaffe@felixcaffe.com.uy
+        </div>
+        <div style="font-size: 11px; color: #000; line-height: 1.7; margin-top: 12px;">
+          <strong style="display:block; color: #000; font-weight:500; font-size:12px; margin-bottom:3px;">Andrés Elola</strong>
+          Fundador – Cygnus<br>
+          +598 99 112 162<br>
+          andres@cygnus.com.uy
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="name-block">
+      <div class="name">Samuel Alvarez</div>
+      <div class="role-tag">Mozo &nbsp;·&nbsp; Camarero</div>
+    </div>
+
+    <div class="main-content">
+
+      <section>
+        <div class="m-section-title">Perfil</div>
+        <p class="perfil-text">
+          Profesional con experiencia en atención al cliente en entornos de alta demanda y ritmo intenso. En la temporada 2025-2026 trabajé como mozo en Felix Caffè (Punta del Este), consolidando habilidades en servicio de mesa, manejo de bandeja, comandas y coordinación con cocina. Cuento con experiencia previa en cocina de restaurante y una trayectoria profesional que me ha formado en responsabilidad, trabajo en equipo y resolución bajo presión.
+        </p>
+      </section>
+
+      <section>
+        <div class="m-section-title">Experiencia en Gastronomía</div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Mozo — Felix Caffè</div>
+            <div class="job-badge">Dic 2025 – Feb 2026</div>
+          </div>
+          <div class="job-place">Café Restaurante · Punta del Este, Uruguay</div>
+          <ul>
+            <li>Atención al cliente en mesa con alto volumen de cubiertos diarios.</li>
+            <li>Manejo de bandeja y servicio simultáneo de múltiples mesas.</li>
+            <li>Toma de comandas y coordinación fluida con cocina.</li>
+            <li>Armado, montaje y cierre de mesas.</li>
+            <li>Gestión de cobros y cierre de cuenta con clientes.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-title">Cocinero — TGI Fridays</div>
+            <div class="job-badge secondary">2012 – 2013</div>
+          </div>
+          <div class="job-place">Valencia, Venezuela</div>
+          <ul>
+            <li>Producción en línea en cocina de alta demanda.</li>
+            <li>Preparación en sartenes y armado de platos.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="m-section-title">Otra Experiencia</div>
+        <div class="job-minor">
+          <span class="job-minor-title">Desarrollador de Software · Cygnus, Montevideo</span>
+          <span class="job-minor-period">2019 – Presente</span>
+        </div>
+      </section>
+
+      <section>
+        <div class="m-section-title">Educación</div>
+        <div class="edu-block">
+          <div class="edu-degree">Ingeniería en Informática</div>
+          <div class="edu-place">Universidad Politécnica Territorial de Yaracuy — Venezuela</div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</div>
+</body>
+</html>
